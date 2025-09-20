@@ -17,14 +17,14 @@ Agrega esa carpeta al PATH:
 - Abre Panel de Control → Sistema → Configuración avanzada → Variables de entorno.
 - En "Path" añade C:\tools\terraform.
 Verifica instalación: abre PowerShell o CMD y ejecuta:
-- terraform -versión
+``` terraform -versión ```
 
 Linux / macOS
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 sudo apt-get update && sudo apt-get install terraform
 Verifica
-- terraform -version
+``` terraform -version ```
 
 Paso 3: Configurar VS Code
 Abre VS Code.
@@ -37,16 +37,18 @@ main.tf
 Paso 5: Ejecutar comandos Terraform
 En la terminal de VS Code (dentro de la carpeta del proyecto):
 Inicializar proyecto (descarga plugins):
-- terraform init
+``` terraform init ```
 Ver plan de ejecución:
-- terraform plan
+``` terraform plan ```
 (Opcional y debes estar conectado a tu cuenta de nube, por ejemplo Azure) Aplicar cambios:
-- terraform apply
+``` terraform apply ```
+Actualizar las versiones del proveedor y del módulo.
+``` terraform init -upgrade ```
 
 Paso 6: Pasos para instalar Azure CLI en Windows:
 Descarga el instalador desde: https://learn.microsoft.com/es-es/cli/azure/install-azure-cli-windows?view=azure-cli-latest&pivots=winget
 Ejecuta el instalador y sigue las instrucciones.
 Verifica la instalación en la terminal de VS Code con:
-- az --version
+``` az --version ```
 Inicia sesión en Azure:
-- az login
+``` az login ```
